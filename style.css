@@ -8,6 +8,7 @@
 
 .cactus {
   position: absolute;
+  background: red;
   width: 60 px;
   height: 60px;
   bottom: 0;
