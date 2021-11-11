@@ -42,6 +42,8 @@ function createCactus() {
   let cactusPosition = 1000;
   let randomTime = Math.random() * 6000;
 
+  if (isGameOver) return;
+
   cactus.classList.add("cactus");
   background.appendChild(cactus);
   cactus.style.left = 1000 + "px";
@@ -60,7 +62,7 @@ function createCactus() {
     }
   }, 20);
 
-  setTimeout(createCactus(), randomTime);
+  setTimeout(createCactus, randomTime);
 }
 
 createCactus();

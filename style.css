@@ -8,8 +8,7 @@
 
 .cactus {
   position: absolute;
-  background: red;
-  width: 60 px;
+  width: 60px;
   height: 60px;
   bottom: 0;
   background-image: url(img/cactus.png);
