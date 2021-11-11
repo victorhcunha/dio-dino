@@ -8,7 +8,7 @@ let position = 0;
 function handleKeyUp(event) {
   if (event.keyCode === 32) {
     jump();
-    console.log("Espaço");
+    console.log("Pressionou Espaço");
   }
 }
 
@@ -35,6 +35,13 @@ function jump() {
       dino.style.bottom = position + "px";
     }
   }, 20);
+}
+
+function createCactus() {
+  const cactus = document.createElement("div");
+
+  cactus.classList.add("cactus");
+  background.appendChild(cactus);
 }
 
 document.addEventListener("keyup", handleKeyUp);
