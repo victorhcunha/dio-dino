@@ -1,5 +1,9 @@
 const dino = document.querySelector(".dino");
-console.log(dino);
+const background = document.querySelector(".background");
+
+let isJumping = false;
+let isGameOver = false;
+let position = 0;
 
 function handleKeyUp(event) {
   if (event.keyCode === 32) {
@@ -9,22 +13,24 @@ function handleKeyUp(event) {
 }
 
 function jump() {
-  let position = 0;
+  isJumping = true;
+
   let upInterval = setInterval(() => {
     if (position >= 150) {
-      //down
+      // down
       clearInterval(upInterval);
+
       let downInterval = setInterval(() => {
         if (position <= 0) {
           clearInterval(downInterval);
+          isJumping = false;
         } else {
-          //up
-          position += 20;
+          position -= 20;
           dino.style.bottom = position + "px";
         }
-      });
+      }, 20);
     } else {
-      //up
+      // up
       position += 20;
       dino.style.bottom = position + "px";
     }
